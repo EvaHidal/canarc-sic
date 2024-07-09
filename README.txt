@@ -2,7 +2,7 @@ Brief Summary:
 
 CANARC_*_loop
 
-Code created to batch process daily sea ice concentration data from Univeristy of Bremen database (https://data.seaice.uni-bremen.de/). 
+Code created to batch process daily sea ice concentration data from Univeristy of Bremen database (https://data.seaice.uni-bremen.de/). Based on code created with the support of CCR.
 
 Input: 
 
