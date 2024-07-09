@@ -1,0 +1,57 @@
+How to make a circle about your point in QGIS:
+
+To Make the point(s):
+
+create 'New Shapefile layer':
+
+	Geometry type: points
+	projection: EPSG:4236
+	Params you should add: site (str), lat (double), lon (double), radius_km (int or double)
+
+Place site points using 'Advanced Digitizing Panel':
+
+	Place map in EPSG:4326
+	'Add point feature'
+	'Enable advanced digitizing tools'
+	Turn the floater toggle on 
+		(so you can double check you are setting your point correctly)
+	Copy lat coordinate, click the lock to select
+	Copy lon coordinate, click the lock
+	Click the point where indicated in the map
+
+	Repeat for other point
+
+Edit the attributes table for your new shapefile:
+
+	Open attribute table
+	Use the formula bar at the top to:	
+		Set lon values to $x
+		Set lat values to $y
+	Name your sites
+	enter the buffer radii (for later)
+
+
+To make the circle(s):
+
+Install plugin 'Shape Tools'
+
+make the cirles by desired radius
+
+	Select the points with a given buffer radius
+	click 'Make cirle'
+	select your sites for input layer and check 'selected features only'
+	shape type: polygon
+	choose circle radius and number of segments
+	check 'add input geometry...'
+	
+you should end up with a different shape layer containing circles around each point for each given radius
+
+To merge the layers:
+	
+	Vector -> Data Management Tools -> Merge Vector Layers
+
+
+You also may want to subtract coastline geometries to more precisely mask sea ice data using tools available in Vector -> Geometry processing
+
+In the end, export your layer by right clicking them and choosing 'save features as.' Many files will come out of this, most are auxilliary for QGIS. But when you go to load things into python using the package geopandas or rasterio, you will be looking for the .shp files
+
