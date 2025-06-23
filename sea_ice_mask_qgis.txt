@@ -1,4 +1,4 @@
-How to make a circle about your point in QGIS:
+How to make a shapefile (circle of a desired radius) around your coordinate point (deployment) in QGIS:
 
 To Make the point(s):
 
@@ -19,7 +19,7 @@ Place site points using 'Advanced Digitizing Panel':
 	Copy lon coordinate, click the lock
 	Click the point where indicated in the map
 
-	Repeat for other point
+	Repeat for additional points
 
 Edit the attributes table for your new shapefile:
 
